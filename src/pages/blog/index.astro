@@ -13,9 +13,12 @@ const fmt = (d) => d.toLocaleDateString('he-IL', { year: 'numeric', month: 'long
       <ul class="post-list">
         {posts.map((p) => (
           <li>
-            <a href={`/blog/${p.id}/`}><h2>{p.data.title}</h2></a>
-            <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
-            <p>{p.data.description}</p>
+            {p.data.cover && <a href={`/blog/${p.id}/`} class="post-thumb-link"><img class="post-thumb" src={p.data.cover} alt="" loading="lazy" /></a>}
+            <div>
+              <a href={`/blog/${p.id}/`}><h2>{p.data.title}</h2></a>
+              <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+              <p>{p.data.description}</p>
+            </div>
           </li>
         ))}
       </ul>

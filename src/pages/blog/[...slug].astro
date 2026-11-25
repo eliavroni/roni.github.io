@@ -19,15 +19,20 @@ const articleLd = {
   datePublished: post.data.date.toISOString(),
   inLanguage: 'he',
   author: { '@type': 'Person', name: 'רוני אליאב' },
+  ...(post.data.cover ? { image: new URL(post.data.cover, Astro.site).toString() } : {}),
 };
 ---
 <Base title={post.data.title} description={post.data.description}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleLd)} />
+  {post.data.cover && <meta property="og:image" content={new URL(post.data.cover, Astro.site).toString()} slot="head" />}
   <article class="section">
     <div class="container prose">
       <h1>{post.data.title}</h1>
       <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+      {post.data.cover && <img class="post-cover" src={post.data.cover} alt="" />}
       <Content />
+      {post.data.video && <p><a href={post.data.video}>לצפייה בסרטון ←</a></p>}
+      {post.data.source && <p class="source-note"><a href={post.data.source}>הפוסט פורסם במקור בפייסבוק</a></p>}
       <div class="author-box">
         <strong>נכתב על ידי רוני אליאב</strong>, מרפאה בעיסוק ומטפלת מוסמכת בשיטת Cog-Fun.
         מלווה ילדים, הורים ומבוגרים עם ADHD. <a href="/#contact">לתיאום שיחת היכרות</a>
