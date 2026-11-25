@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://roni.eliav.dk/sitemap-index.xml
+Sitemap: https://roni-eliav.github.io/sitemap-index.xml
