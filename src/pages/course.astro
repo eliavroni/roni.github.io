@@ -2,6 +2,9 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../data/site';
 
+const courseWhatsapp = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.courseMessage)}`;
+const courseEmail = `mailto:${SITE.email}?subject=${encodeURIComponent(SITE.courseMessage)}`;
+
 const courseName = 'קורס מעשי למרפאות בעיסוק בתחילת הדרך'; // [להשלמה: שם הקורס]
 const courseDescription = 'קורס אונליין שמחבר בין התיאוריה לעבודה היומיומית עם ילדים והורים.';
 
@@ -21,7 +24,9 @@ const courseLd = {
     <div class="container">
       <h1>{courseName}</h1>
       <p>{courseDescription}</p>
-      <a class="btn" href={SITE.courseSignupUrl}>להרשמה לקורס</a>
+      <a class="btn" href={courseWhatsapp}>להרשמה בווטסאפ</a>
+      &nbsp;
+      <a class="btn btn-outline" href={courseEmail}>להרשמה במייל</a>
     </div>
   </section>
 
@@ -51,7 +56,9 @@ const courseLd = {
       <p>רוני אליאב, מרפאה בעיסוק ומטפלת מוסמכת בשיטת Cog-Fun. [להשלמה]</p>
       <!-- Paste a sales funnel / checkout embed code here if you prefer an embedded form -->
       <p style="text-align:center; margin-top:40px">
-        <a class="btn" href={SITE.courseSignupUrl}>אני רוצה להצטרף</a>
+        <a class="btn" href={courseWhatsapp}>אני רוצה להצטרף, בווטסאפ</a>
+        &nbsp;
+        <a class="btn btn-outline" href={courseEmail}>או במייל</a>
       </p>
     </div>
   </section>
