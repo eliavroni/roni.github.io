@@ -8,6 +8,9 @@ const blog = defineCollection({
     date: z.coerce.date(),
     description: z.string(),
     tags: z.array(z.string()).default([]),
+    cover: z.string().optional(),   // e.g. /images/blog/my-post.jpg
+    source: z.string().optional(),  // link to the original post (e.g. Facebook)
+    video: z.string().optional(),   // link to a related video or reel
     draft: z.boolean().default(false),
   }),
 });
