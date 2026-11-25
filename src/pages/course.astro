@@ -5,8 +5,9 @@ import { COURSE_CONTACT } from '../data/site';
 const courseWhatsapp = COURSE_CONTACT.whatsapp;
 const courseEmail = COURSE_CONTACT.email;
 
-const courseName = 'קורס מעשי למרפאות בעיסוק בתחילת הדרך'; // [להשלמה: שם הקורס]
-const courseDescription = 'קורס אונליין שמחבר בין התיאוריה לעבודה היומיומית עם ילדים והורים.';
+const courseName = 'שותפות הורים בתהליך הטיפולי';
+const courseSubtitle = 'מתיאוריה לפרקטיקה בקליניקה';
+const courseDescription = 'קורס דיגיטלי למטפלות: איך הופכים את ההורים מצופים מהצד לסוכני השינוי המרכזיים בבית.';
 
 const courseLd = {
   '@context': 'https://schema.org',
@@ -14,7 +15,11 @@ const courseLd = {
   name: courseName,
   description: courseDescription,
   inLanguage: 'he',
-  provider: { '@type': 'Person', name: 'רוני אליאב' },
+  provider: [
+    { '@type': 'Person', name: 'רוני אליאב' },
+    { '@type': 'Person', name: 'בתיה אהרן פלזן' },
+  ],
+  offers: { '@type': 'Offer', price: '500', priceCurrency: 'ILS' },
 };
 ---
 <Base title={courseName} description={courseDescription}>
@@ -23,7 +28,8 @@ const courseLd = {
   <section class="hero">
     <div class="container">
       <h1>{courseName}</h1>
-      <p>{courseDescription}</p>
+      <p><strong>{courseSubtitle}</strong></p>
+      <p>הורים הם לא הקהל של הטיפול שלך, הם הלב שלו. {courseDescription}</p>
       <a class="btn" href={courseWhatsapp}>להרשמה בווטסאפ</a>
       &nbsp;
       <a class="btn btn-outline" href={courseEmail}>להרשמה במייל</a>
@@ -33,10 +39,11 @@ const courseLd = {
   <section class="section section-alt">
     <div class="container">
       <h2>למי הקורס מתאים</h2>
+      <p class="lead">לכל מי שמכירה את הרגע שבו הטיפול בקליניקה מתקדם נפלא, אבל כשהילד חוזר הביתה הדברים נתקעים, וההורים נשארים "צופים מהצד".</p>
       <div class="grid">
-        <div class="card"><h3>מרפאות בעיסוק צעירות</h3><p>בשנים הראשונות אחרי הלימודים.</p></div>
-        <div class="card"><h3>מטפלות שעובדות עם ילדים</h3><p>ורוצות לחזק את העבודה עם ההורים.</p></div>
-        <div class="card"><h3>מי שרוצה ביטחון מקצועי</h3><p>עם כלים מעשיים ליום שאחרי.</p></div>
+        <div class="card"><h3>מרפאות בעיסוק</h3><p>שרוצות להעמיק את העבודה עם ההורים ולהפוך אותם לשותפים לדרך.</p></div>
+        <div class="card"><h3>קלינאיות תקשורת</h3><p>שמחפשות כלים מעשיים לגייס את ההורים להמשך העבודה בבית.</p></div>
+        <div class="card"><h3>מטפלות רגשיות</h3><p>שרוצות לבנות עם ההורים שיתוף פעולה מכיל, קשוב וללא שיפוטיות.</p></div>
       </div>
     </div>
   </section>
@@ -45,16 +52,21 @@ const courseLd = {
     <div class="container prose">
       <h2>מה תלמדו</h2>
       <ul class="checklist">
-        <li>[להשלמה: נושא ראשון]</li>
-        <li>[להשלמה: נושא שני]</li>
-        <li>[להשלמה: נושא שלישי]</li>
-        <li>[להשלמה: נושא רביעי]</li>
+        <li>להפוך את ההורים מצופים מהצד לסוכני השינוי המרכזיים בבית</li>
+        <li>לקבוע יחד עם ההורים מטרות טיפול משמעותיות</li>
+        <li>לגייס מוטיבציה פנימית, בעזרת עקרונות האימון (coaching)</li>
+        <li>להציב גבולות מבוססי התקשרות (ACT), ולעזור להורים להחזיק אותם בבית</li>
       </ul>
       <h2>מבנה הקורס</h2>
-      <p>[להשלמה: מספר מפגשים, אונליין או מוקלט, מחיר ותאריך פתיחה]</p>
-      <h2>על המנחה</h2>
-      <p>רוני אליאב, מרפאה בעיסוק ומטפלת מוסמכת בשיטת Cog-Fun. [להשלמה]</p>
-      <!-- Paste a sales funnel / checkout embed code here if you prefer an embedded form -->
+      <ul class="checklist">
+        <li>4 מפגשים מוקלטים, ממוקדים, מעשיים וחווייתיים, לצפייה מכל מקום ובכל זמן</li>
+        <li>חוברת עבודה דיגיטלית: מדריך יישומי לשיתוף הורים בקליניקה</li>
+        <li>זמינות מלאה שלנו לכל שאלה והתייעצות קלינית לאורך הלמידה</li>
+      </ul>
+      <p><strong>מחיר הקורס המלא: 500 ₪.</strong> כדי להירשם, שלחו לנו הודעה בווטסאפ או במייל, ונשלח לכם את אפשרויות התשלום.</p>
+      <h2>על המנחות</h2>
+      <p><strong>רוני אליאב</strong>, מרפאה בעיסוק, מטפלת מוסמכת בשיטת Cog-Fun ובעלת תואר שני בייעוץ והדרכת הורים. מלווה הורים וילדים כבר שנים, ומדריכה מרפאות בעיסוק בהדרכה אישית ובהדרכת צוותים. הדרכה היא עבורה תשוקה גדולה, ומקום שבו היא לומדת ומלמדת בו־זמנית.</p>
+      <p><strong>בתיה אהרן פלזן</strong>, שותפתה של רוני לקורס ולפודקאסט "ריפוי בעיסוק בגובה העיניים".</p>
       <p style="text-align:center; margin-top:40px">
         <a class="btn" href={courseWhatsapp}>אני רוצה להצטרף, בווטסאפ</a>
         &nbsp;
