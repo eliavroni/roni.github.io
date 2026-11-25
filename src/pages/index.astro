@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../data/site';
+import { SITE, CONTACT } from '../data/site';
 
 const services = [
   {
@@ -64,9 +64,9 @@ const services = [
       <h2>בואו נדבר</h2>
       <p class="lead" style="margin-inline:auto">אפשר לכתוב לי בווטסאפ או במייל, ואחזור אליכם בהקדם.</p>
       <p>
-        <a class="btn" href={`https://wa.me/${SITE.whatsapp}`}>ווטסאפ</a>
+        <a class="btn" href={CONTACT.whatsapp}>ווטסאפ</a>
         &nbsp;
-        <a class="btn btn-outline" href={`mailto:${SITE.email}`}>מייל</a>
+        <a class="btn btn-outline" href={CONTACT.email}>מייל</a>
       </p>
     </div>
   </section>
