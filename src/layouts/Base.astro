@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import { SITE } from '../data/site';
+
+const { title, description = SITE.description } = Astro.props;
+const pageTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | ${SITE.role}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'רוני אליאב',
+  alternateName: 'Roni Eliav',
+  jobTitle: 'מרפאה בעיסוק',
+  url: Astro.site?.toString(),
+  knowsAbout: ['ADHD', 'Cog-Fun', 'הדרכת הורים', 'ויסות רגשי', 'ריפוי בעיסוק'],
+};
+---
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="he_IL" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="/" class="brand">{SITE.name}<span>{SITE.role}</span></a>
+        <nav>
+          <a href="/#services">שירותים</a>
+          <a href="/#about">אודות</a>
+          <a href="/course">הקורס</a>
+          <a href="/blog">בלוג</a>
+          <a href="/#contact" class="btn btn-small">צרו קשר</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© {new Date().getFullYear()} {SITE.name}. כל הזכויות שמורות.</p>
+      </div>
+    </footer>
+  </body>
+</html>
