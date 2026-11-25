@@ -1,9 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../data/site';
+import { COURSE_CONTACT } from '../data/site';
 
-const courseWhatsapp = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.courseMessage)}`;
-const courseEmail = `mailto:${SITE.email}?subject=${encodeURIComponent(SITE.courseMessage)}`;
+const courseWhatsapp = COURSE_CONTACT.whatsapp;
+const courseEmail = COURSE_CONTACT.email;
 
 const courseName = 'קורס מעשי למרפאות בעיסוק בתחילת הדרך'; // [להשלמה: שם הקורס]
 const courseDescription = 'קורס אונליין שמחבר בין התיאוריה לעבודה היומיומית עם ילדים והורים.';
