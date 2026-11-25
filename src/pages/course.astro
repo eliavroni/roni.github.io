@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+
+const courseName = 'קורס מעשי למרפאות בעיסוק בתחילת הדרך'; // [להשלמה: שם הקורס]
+const courseDescription = 'קורס אונליין שמחבר בין התיאוריה לעבודה היומיומית עם ילדים והורים.';
+
+const courseLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: courseName,
+  description: courseDescription,
+  inLanguage: 'he',
+  provider: { '@type': 'Person', name: 'רוני אליאב' },
+};
+---
+<Base title={courseName} description={courseDescription}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(courseLd)} />
+
+  <section class="hero">
+    <div class="container">
+      <h1>{courseName}</h1>
+      <p>{courseDescription}</p>
+      <a class="btn" href={SITE.courseSignupUrl}>להרשמה לקורס</a>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>למי הקורס מתאים</h2>
+      <div class="grid">
+        <div class="card"><h3>מרפאות בעיסוק צעירות</h3><p>בשנים הראשונות אחרי הלימודים.</p></div>
+        <div class="card"><h3>מטפלות שעובדות עם ילדים</h3><p>ורוצות לחזק את העבודה עם ההורים.</p></div>
+        <div class="card"><h3>מי שרוצה ביטחון מקצועי</h3><p>עם כלים מעשיים ליום שאחרי.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>מה תלמדו</h2>
+      <ul class="checklist">
+        <li>[להשלמה: נושא ראשון]</li>
+        <li>[להשלמה: נושא שני]</li>
+        <li>[להשלמה: נושא שלישי]</li>
+        <li>[להשלמה: נושא רביעי]</li>
+      </ul>
+      <h2>מבנה הקורס</h2>
+      <p>[להשלמה: מספר מפגשים, אונליין או מוקלט, מחיר ותאריך פתיחה]</p>
+      <h2>על המנחה</h2>
+      <p>רוני אליאב, מרפאה בעיסוק ומטפלת מוסמכת בשיטת Cog-Fun. [להשלמה]</p>
+      <!-- Paste a sales funnel / checkout embed code here if you prefer an embedded form -->
+      <p style="text-align:center; margin-top:40px">
+        <a class="btn" href={SITE.courseSignupUrl}>אני רוצה להצטרף</a>
+      </p>
+    </div>
+  </section>
+</Base>
