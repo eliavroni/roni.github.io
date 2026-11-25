@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+
+const services = [
+  {
+    title: 'הדרכת הורים',
+    text: 'כלים מעשיים להבנת הילד, להתמודדות עם אתגרים יומיומיים ולחיזוק הקשר בבית.',
+  },
+  {
+    title: 'ויסות רגשי',
+    text: 'עבודה עם ילדים והורים על זיהוי רגשות, הרגעה עצמית והתמודדות עם מצבי תסכול.',
+  },
+  {
+    title: 'ילדים עם ADHD בשיטת Cog-Fun',
+    text: 'טיפול ממוקד בתפקודים ניהוליים דרך משחק ופעילות, בשיתוף ההורים, על ידי מטפלת מוסמכת בשיטה.',
+  },
+  {
+    title: 'מבוגרים עם ADHD, אונליין',
+    text: 'ליווי אישי מהבית: ניהול זמן, התארגנות ואסטרטגיות שמתאימות לחיים שלך.',
+  },
+  {
+    title: 'הכשרות למרפאות בעיסוק',
+    text: 'קורסים והדרכה למרפאות ומרפאים בעיסוק בתחילת הדרך.',
+    link: '/course',
+  },
+];
+---
+<Base>
+  <section class="hero">
+    <div class="container">
+      <h1>{SITE.name}, מרפאה בעיסוק</h1>
+      <p>ליווי ילדים, הורים ומבוגרים עם ADHD, הדרכת הורים וויסות רגשי, בגישה חמה, מעשית ומותאמת אישית.</p>
+      <a class="btn" href="#contact">לתיאום שיחת היכרות</a>
+    </div>
+  </section>
+
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>במה אני יכולה לעזור</h2>
+      <p class="lead">כל תהליך מתחיל בשיחת היכרות, כדי להבין מה חשוב לכם ולהתאים את הדרך.</p>
+      <div class="grid">
+        {services.map((s) => (
+          <div class="card">
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            {s.link && <p class="more"><a href={s.link}>לפרטים על הקורס ←</a></p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container prose">
+      <h2>נעים מאוד, אני רוני</h2>
+      <p>אני מרפאה בעיסוק ומטפלת מוסמכת בשיטת Cog-Fun. [להשלמה: רקע מקצועי, ניסיון ומה מניע אותי בעבודה]</p>
+      <p>[להשלמה: איך נראה תהליך עבודה משותף, ואיפה מתקיימים המפגשים: בקליניקה, בבית או אונליין]</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt">
+    <div class="container prose" style="text-align:center">
+      <h2>בואו נדבר</h2>
+      <p class="lead" style="margin-inline:auto">אפשר לכתוב לי בווטסאפ או במייל, ואחזור אליכם בהקדם.</p>
+      <p>
+        <a class="btn" href={`https://wa.me/${SITE.whatsapp}`}>ווטסאפ</a>
+        &nbsp;
+        <a class="btn btn-outline" href={`mailto:${SITE.email}`}>מייל</a>
+      </p>
+    </div>
+  </section>
+</Base>
