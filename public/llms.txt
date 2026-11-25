@@ -4,5 +4,5 @@
 
 ## Main pages
 - [Home and services](https://roni-eliav.github.io/)
-- [Online course for occupational therapists](https://roni-eliav.github.io/course)
+- [Digital course: parent partnership in the therapeutic process (for occupational, speech and emotional therapists)](https://roni-eliav.github.io/course)
 - [Blog](https://roni-eliav.github.io/blog)
