@@ -54,6 +54,11 @@ nav a:hover { color: var(--accent); }
 .post-list a { text-decoration: none; color: var(--text); }
 time { color: var(--muted); font-size: .9rem; }
 .author-box { margin-top: 48px; padding: 24px; border-radius: var(--radius); background: var(--accent-soft); }
+.post-list li { display: flex; gap: 20px; align-items: flex-start; }
+.post-thumb { width: 110px; height: 110px; object-fit: cover; border-radius: 12px; display: block; }
+.post-thumb-link { flex: none; }
+.post-cover { display: block; max-width: 100%; max-height: 560px; width: auto; margin: 20px auto 28px; border-radius: var(--radius); }
+.source-note { font-size: .9rem; color: var(--muted); }
 
 .checklist { list-style: none; padding: 0; }
 .checklist li { padding: 6px 0; }
