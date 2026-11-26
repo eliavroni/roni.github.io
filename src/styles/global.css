@@ -60,7 +60,7 @@ nav a:hover, nav a:focus-visible { background: var(--accent); color: #fff; }
 .card h3 { margin: 0 0 10px; font-size: 1.55rem; }
 .card p { margin: 0; color: var(--muted); }
 .card .more { margin-top: 12px; }
-.services-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.services-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 24px; }
 .services-grid .card { padding: 36px; }
 
 .prose { max-width: 720px; margin: 0 auto; }
