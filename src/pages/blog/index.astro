@@ -12,14 +12,10 @@ const fmt = (d) => d.toLocaleDateString('he-IL', { year: 'numeric', month: 'long
   <section class="section">
     <div class="container prose">
       <h1>בלוג</h1>
-      <div class="subscribe-box">
-        <p class="subscribe-cta">{CTA}</p>
-        <script is:inline async data-uid="d5f830f981" src={KIT_SRC}></script>
-      </div>
       <ul class="post-list">
         {posts.map((p, i) => (
           <Fragment>
-          {i > 0 && i % 10 === 0 && (
+          {i >= 5 && (i - 5) % 10 === 0 && (
             <li class="subscribe-item">
               <div class="subscribe-box">
                 <p class="subscribe-cta">{CTA}</p>
