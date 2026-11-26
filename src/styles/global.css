@@ -64,6 +64,13 @@ nav a:hover, nav a:focus-visible { background: var(--accent); color: #fff; }
 .card .more { margin-top: 12px; }
 .services-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 24px; }
 .services-grid .card { padding: 36px; }
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 90px; }
+.card-clickable { position: relative; transition: transform .2s, box-shadow .2s; }
+.card-clickable:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(18,122,116,.14); }
+.card-link { color: inherit; text-decoration: none; }
+.card-link::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius); }
+.card-clickable .more a { position: relative; z-index: 1; }
 
 .prose { max-width: 720px; margin: 0 auto; }
 .post-list { list-style: none; padding: 0; }
