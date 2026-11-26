@@ -27,8 +27,10 @@ h1, h2, h3 { line-height: 1.25; font-weight: 700; }
 
 .site-header { background: #fff; box-shadow: 0 2px 0 var(--sun); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
-.brand { display: flex; flex-direction: column; line-height: 1.2; font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
-.brand span { font-weight: 400; font-size: .85rem; color: var(--muted); }
+.brand { display: flex; align-items: center; gap: 10px; line-height: 1.2; font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
+.brand-mark { height: 48px; width: auto; }
+.brand-text { display: flex; flex-direction: column; }
+.brand-text span { font-weight: 400; font-size: .85rem; color: var(--muted); }
 nav { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 nav a { color: var(--text); text-decoration: none; padding: 6px 16px; border-radius: 999px; font-weight: 600; transition: background-color .2s, color .2s; }
 nav a:hover, nav a:focus-visible { background: var(--accent); color: #fff; }
@@ -39,8 +41,10 @@ nav a:hover, nav a:focus-visible { background: var(--accent); color: #fff; }
 .btn-small { padding: 6px 18px; color: #fff !important; }
 .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
 
-.hero { padding: 96px 0 72px; text-align: center; background: linear-gradient(135deg, #ffe8d6 0%, #fff6dc 50%, #e3f4ee 100%); }
+.hero { padding: 56px 0 72px; text-align: center; background: linear-gradient(135deg, #ffe8d6 0%, #fff6dc 50%, #e3f4ee 100%); }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 16px; }
+.hero-logo { margin: 0 auto 8px !important; max-width: 760px; }
+.hero-logo img { display: block; width: 100%; height: auto; }
 .hero p { font-size: 1.2rem; color: var(--muted); max-width: 640px; margin: 0 auto 32px; }
 
 .section { padding: 72px 0; }
@@ -78,6 +82,7 @@ time { color: var(--muted); font-size: .9rem; }
 .site-footer { border-top: 4px solid var(--sun); padding: 32px 0; color: var(--muted); font-size: .95rem; text-align: center; }
 
 @media (max-width: 640px) {
-  .hero { padding: 64px 0 48px; }
+  .hero { padding: 32px 0 48px; }
+  .brand-mark { height: 38px; }
   nav { gap: 14px; font-size: .95rem; }
 }
