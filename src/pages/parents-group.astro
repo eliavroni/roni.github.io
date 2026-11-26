@@ -1,0 +1,161 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+
+const title = 'צעצועים הם המילים, ומשחק הוא השפה';
+const description = 'סדנת הורות מעשית דרך משחק, להורים לילדים בגילאי 3–10, בהשראת גישתו של ד"ר גארי לנדרת. בהנחיית רוני אליאב, מרפאה בעיסוק ומדריכת הורים.';
+
+const groupMessage = 'לגבי סדנת ההורים';
+const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`${SITE.greeting}, ${groupMessage}.\n`)}`;
+const mail = `mailto:${SITE.email}?subject=${encodeURIComponent(groupMessage)}&body=${encodeURIComponent(`${SITE.greeting}, ${groupMessage}.\n`)}`;
+
+const goals = [
+  'לחזק את הקשר בין ההורה לילד',
+  'לקבוע גבולות בלי כעס',
+  'להקנות לילדים אחריות',
+  'לבנות את הביטחון העצמי של הילד',
+  'לטפח אינטליגנציה רגשית',
+  'לראות את העולם דרך עיני הילד',
+  'ולשנות דפוסים שכבר לא עובדים בבית',
+];
+
+const questions = [
+  'במה תורם המשחק להתפתחות של הילד שלי, ואיך אני יכולה לעזור?',
+  'איך הופכים משחק לחוויה משמעותית, גם כשיש מעט זמן?',
+  'איך מפתחים אצל הילד יכולת לשחק לבד?',
+  'מה עושים עם תסכול, מריבות ומאבקי כוח בזמן משחק, ועם הקושי להפסיד?',
+  'איך משחקים עם ילד סוער, עם ילד שמשתעמם מהר, או עם כמה ילדים יחד?',
+  'איך משלבים למידה במשחק, בלי שזה ירגיש כמו שיעורי בית?',
+];
+
+const eventLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: title,
+  description,
+  inLanguage: 'he',
+  provider: { '@type': 'Person', name: 'רוני אליאב' },
+};
+---
+<Base title="סדנת הורים: צעצועים הם המילים, ומשחק הוא השפה" description={description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(eventLd)} />
+
+  <section class="pg-hero">
+    <div class="container pg-hero-inner">
+      <div class="pg-hero-text">
+        <p class="pg-kicker">סדנת הורות מעשית דרך משחק</p>
+        <h1>צעצועים הם המילים,<br /><span>ומשחק הוא השפה</span></h1>
+        <svg class="pg-heart" viewBox="0 0 320 30" aria-hidden="true"><path d="M2 18 C70 6, 120 28, 160 16 C150 4, 168 0, 172 10 C176 0, 194 4, 184 16 C220 28, 270 8, 318 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <p class="pg-pill">להורים לילדים בגילאי 3–10</p>
+        <p class="pg-sub">בהשראת גישתו של ד"ר גארי לנדרת</p>
+        <a class="btn pg-btn" href="#next-group">לקבלת הודעה על המחזור הבא</a>
+      </div>
+      <img class="pg-illustration" src="/images/play-illustration.webp" width="720" height="495" alt="איור של אמא וילד משחקים יחד בקוביות" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>למה דווקא משחק?</h2>
+      <p>ילדים לא תמיד יודעים להסביר במילים מה עובר עליהם, אבל הם אומרים לנו המון דרך המשחק. במשחק הם מכירים את העולם ואת עצמם, מתרגלים שליטה, מביעים רגשות, ומתמודדים עם מה שקשה להם. כשאנחנו לומדים להיכנס לעולם הזה ולהבין את השפה שלו, הקשר מתחזק, והרבה מהמאבקים היומיומיים נרגעים.</p>
+      <p>זו לא עוד הרצאה על הורות. בסדנה נתנסה, נשחק, נתרגל ונדבר, ונצא מכל מפגש עם כלים שאפשר לנסות כבר באותו ערב בבית.</p>
+    </div>
+  </section>
+
+  <section class="section pg-tinted">
+    <div class="container prose">
+      <h2>בסדנה נלמד</h2>
+      <ul class="pg-dots">
+        {goals.map((g) => <li>{g}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>שאלות שנעסוק בהן</h2>
+      <div class="pg-questions">
+        {questions.map((q) => <p class="pg-q">{q}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section pg-tinted">
+    <div class="container">
+      <h2 class="pg-center">איך זה עובד</h2>
+      <div class="grid pg-facts">
+        <div class="card"><h3>8 מפגשים</h3><p>מפגש שבועי של שעה וחצי.</p></div>
+        <div class="card"><h3>קבוצה קטנה</h3><p>עד חמישה משתתפים בלבד, כדי שלכל אחד יהיה מקום לשאול ולשתף.</p></div>
+        <div class="card"><h3>מעשי וחווייתי</h3><p>התנסויות, דוגמאות מהבית ותרגול קצר בין המפגשים.</p></div>
+      </div>
+      <p class="pg-center pg-note">מועדים, מקום ומחיר יפורסמו עם פתיחת המחזור הבא.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose pg-about">
+      <img class="pg-photo" src="/images/roni-group.webp" width="400" height="400" alt="רוני אליאב" />
+      <div>
+        <h2>מי מנחה</h2>
+        <p>אני רוני אליאב, מרפאה בעיסוק, מטפלת מוסמכת בשיטת Cog-Fun ובעלת תואר שני בייעוץ והדרכת הורים. שנים רבות ליוויתי ילדים והורים בקליניקה, והנחיתי סדנאות משחק להורים. אני מאמינה שהשינוי הגדול קורה כשההורה מקבל כלים לראות את הילד דרך עיניים של מסוגלות, ושמשחק הוא אחת הדרכים הכי טובות לשם.</p>
+        <p><a href="/#about">עוד עליי ←</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="next-group" class="section pg-tinted">
+    <div class="container prose">
+      <div class="subscribe-box">
+        <p class="subscribe-cta">על מנת לקבל הודעה כשייפתח המחזור הבא, השאירו כתובת מייל כאן:</p>
+        <script is:inline async data-uid="085e638f4f" src="https://ronieliav.kit.com/085e638f4f/index.js"></script>
+      </div>
+      <p class="pg-center">יש לכם שאלה? אפשר לכתוב לי:</p>
+      <p class="pg-center">
+        <a class="btn btn-plain" href={wa}>ווטסאפ</a>
+        &nbsp;
+        <a class="btn btn-plain" href={mail}>מייל</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .pg-hero { --sage: #6f8a5c; --clay: #c8693f; padding: 48px 0 40px; }
+  .pg-hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+  .pg-kicker { color: var(--muted); font-weight: 600; margin: 0 0 8px; }
+  .pg-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.15; color: var(--sage); margin: 0; }
+  .pg-hero h1 span { color: var(--clay); }
+  .pg-heart { display: block; width: 260px; max-width: 100%; color: var(--sage); margin: 12px 0 16px; }
+  .pg-pill { display: inline-block; background: #e5e9d8; color: #3f4f33; font-weight: 700; font-size: 1.2rem; padding: 8px 22px; border-radius: 999px; margin: 0 0 10px; }
+  .pg-sub { color: var(--muted); margin: 0 0 24px; }
+  .pg-btn { background: var(--accent); }
+  .pg-illustration { width: 100%; height: auto; }
+
+  .pg-tinted { background: #f6f1e4; }
+  .pg-center { text-align: center; }
+  .pg-note { color: var(--muted); margin-top: 24px; }
+
+  .pg-dots { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px; }
+  .pg-dots li { padding: 8px 0; break-inside: avoid; font-size: 1.1rem; }
+  .pg-dots li::before { content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #c8693f; margin-inline-end: 12px; }
+
+  .pg-questions { display: grid; gap: 12px; }
+  .pg-q { margin: 0; background: #fff; border: 1px solid var(--border); border-inline-start: 5px solid #6f8a5c; border-radius: 12px; padding: 14px 18px; }
+
+  .pg-facts { grid-template-columns: repeat(3, 1fr); }
+  .pg-facts .card { border-top-color: #6f8a5c; text-align: center; }
+  .pg-facts .card:nth-child(2) { border-top-color: #c8693f; }
+  .pg-facts .card:nth-child(3) { border-top-color: #d9a85b; }
+
+  .pg-about { display: flex; gap: 32px; align-items: center; }
+  .pg-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; flex: none; border: 6px solid #e5e9d8; }
+
+  @media (max-width: 760px) {
+    .pg-hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .pg-heart { margin-inline: auto; }
+    .pg-illustration { max-width: 420px; margin: 0 auto; }
+    .pg-dots { columns: 1; }
+    .pg-facts { grid-template-columns: 1fr; }
+    .pg-about { flex-direction: column; text-align: center; }
+  }
+</style>
