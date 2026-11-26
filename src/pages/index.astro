@@ -37,8 +37,8 @@ const services = [
       <p class="lead">כל תהליך מתחיל בשיחת היכרות, כדי להבין מה חשוב לכם ולהתאים את הדרך.</p>
       <div class="grid services-grid">
         {services.map((s) => (
-          <div class="card">
-            <h3>{s.title}</h3>
+          <div class="card card-clickable">
+            <h3><a class="card-link" href="#contact">{s.title}</a></h3>
             <p>{s.text}</p>
             {s.link && <p class="more"><a href={s.link}>לפרטים על הקורס ←</a></p>}
           </div>
