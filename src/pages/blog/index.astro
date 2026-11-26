@@ -4,14 +4,29 @@ import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog', (p) => !p.data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const KIT_SRC = 'https://ronieliav.kit.com/d5f830f981/index.js';
+const CTA = 'לקבלת הפוסטים שלי במייל (ללא ספאם!), הירשמו כאן:';
 const fmt = (d) => d.toLocaleDateString('he-IL', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 <Base title="בלוג" description="מאמרים על ADHD, הורות וויסות רגשי מאת רוני אליאב, מרפאה בעיסוק.">
   <section class="section">
     <div class="container prose">
       <h1>בלוג</h1>
+      <div class="subscribe-box">
+        <p class="subscribe-cta">{CTA}</p>
+        <script is:inline async data-uid="d5f830f981" src={KIT_SRC}></script>
+      </div>
       <ul class="post-list">
-        {posts.map((p) => (
+        {posts.map((p, i) => (
+          <Fragment>
+          {i > 0 && i % 10 === 0 && (
+            <li class="subscribe-item">
+              <div class="subscribe-box">
+                <p class="subscribe-cta">{CTA}</p>
+                <script is:inline async data-uid="d5f830f981" src={KIT_SRC}></script>
+              </div>
+            </li>
+          )}
           <li>
             {p.data.cover && <a href={`/blog/${p.id}/`} class="post-thumb-link"><img class="post-thumb" src={p.data.cover} alt="" loading="lazy" /></a>}
             <div>
@@ -20,6 +35,7 @@ const fmt = (d) => d.toLocaleDateString('he-IL', { year: 'numeric', month: 'long
               <p>{p.data.description}</p>
             </div>
           </li>
+          </Fragment>
         ))}
       </ul>
     </div>
