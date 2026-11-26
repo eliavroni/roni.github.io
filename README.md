@@ -7,3 +7,5 @@ Hebrew site for Roni Eliav, occupational therapist and Cog-Fun therapist. Built 
 - Every push to `main` rebuilds and publishes the site automatically.
 
 © Roni Eliav. All rights reserved.
+
+edited with Claude and Zapier
